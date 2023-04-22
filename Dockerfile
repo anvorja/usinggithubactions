@@ -2,16 +2,13 @@
 FROM node:18.16.0
 
 # Establece el directorio de trabajo dentro del contenedor
-WORKDIR /app
+WORKDIR /tallergithibactions
 
 # Copia los archivos del proyecto al contenedor
-COPY ./tallergithubactions .
+COPY . . 
 
-# Instala las dependencias del proyecto
 RUN npm install
 
-# Expone el puerto 3000 para que pueda ser accesible desde el exterior
-EXPOSE 3000
+EXPOSE 4400
 
-# Define el comando que se ejecutará cuando se inicie el contenedor
-CMD ["npm", "start"]
+CMD ["npm", "test"]
